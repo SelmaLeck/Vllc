@@ -9,8 +9,8 @@ const questions = [
   { q:"Wer hat über 900 Nachrichten bei dir?", a:["JoxoTV","Neneli_","t_son_","TrNeru"], correct:1, value:8000 },
   { q:"Wie viele aktive Mods hast du?", a:["2","5","0","3"], correct:2, value:16000 },
   { q:"Wie viel Modgehalt erhalten deine Mods?", a:["50","5","0","80"], correct:2, value:32000 },
-  { q:"?", a:["Rowling","Tolkien","Lewis","Martin"], correct:0, value:64000 },
-  { q:"xy?", a:["ahh","behh","ceee","dee"], correct:0, value:125000 },
+  { q:"Wann kam das Album ''WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?'' von Billie Eillish raus?", a:["2019","2018","2020","2021"], correct:0, value:64000 },
+  { q:"Wer hat die MEISTEN Chatnachrichten bei dir?", a:["f7zzy_","its_si135","isavllc","rrxm3o"], correct:1, value:125000 },
   { q:"yx?", a:["7","8","9","10"], correct:2, value:250000 },
   { q:"xy?", a:["29","69","68","67"], correct:1, value:500000 },
   { q:"xy?", a:["x","y","Gce","e"], correct:3, value:1000000 }
@@ -68,7 +68,7 @@ function checkAnswer(i){
 }
 
 function showEnd(){
-  questionEl.innerText = "Spiel vorbei! 🎉";
+  questionEl.innerText = "SPIEL VORBEI... DU HAST ES GESCHAFFT!!";
   answersEl.innerHTML = `<p>Dein Punktestand: ${score}€</p>`;
 }
 
