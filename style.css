@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
+/* --- Body und Hintergrund --- */
 body {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
-  overflow: hidden;
   background: linear-gradient(120deg, #01011b, #020229, #020226);
   background-size: 600% 600%;
   animation: gradientBG 20s ease infinite;
@@ -11,191 +11,192 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 @keyframes gradientBG {
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
-/* --- Spielseite Container --- */
-.container {
-  height: 90vh; /* fast volle Höhe */
-  width: 60vw; /* ca. 1150px auf 1920px Bildschirm */
-  padding: 40px;
-  border-radius: 25px;
-  backdrop-filter: blur(8px);
-  background: #020229;
-  box-shadow: 0 0 40px #020229;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  text-align: center;
-  color: #13c8e8;
-  font-size: 3em;
-  text-shadow: 0 0 15px #1bc6ec;
-}
-
-.game {
-  display: flex;
-  gap: 25px;
-  margin-top: 20px;
-}
-
-#question-box {
-  flex: 2;
-  background: #02043d;
-  padding: 25px;
-  min-width: 300px;
-  min-height: 500px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-  position: relative;
-}
-
-#question-container {
-  background: #062553;
-  border: 4px solid #040849;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 30px;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 20px #040849;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  0% { box-shadow: 0 0 15px rgba(18, 200, 237, 0.6); }
-  100% { box-shadow: 0 0 30px rgb(16, 203, 245); }
-}
-
-#answers button {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  background: #0044aa;
-  color: #fff;
-  text-align: center;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-#answers button:hover {
-  background: #0066ff;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0,102,255,0.7);
-}
-
-#answers button.correct { background: #4CAF50; color: #000; box-shadow: 0 0 25px #4CAF50; }
-#answers button.wrong { background: #f44336; color: #fff; box-shadow: 0 0 25px #f44336; }
-
-#ladder {
-  flex: 1;
-  background: #0a0a1e;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
-  max-height: 700px;
-  overflow-y: auto;
-}
-
-#ladder ul { list-style: none; padding: 0; margin: 0; }
-#ladder li {
-  padding: 6px;
-  margin: 3px 0;
-  text-align: right;
-  font-weight: bold;
-  color: #ccc;
-  border-radius: 5px;
-  transition: 0.4s;
-}
-#ladder li.current { background: #13edf5; color: #000; transform: scale(1.1); }
-
-/* --- NEUE SCREENS (Start + Disclaimer) --- */
+/* --- Screens --- */
 .screen {
   display: none;
-  text-align: center;
-  color: #fff;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(120deg, #01011b, #020229, #020226);
-  background-size: 600% 600%;
-  animation: gradientBG 20s ease infinite;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: #fff;
 }
 
 .screen.active {
   display: flex;
 }
 
+/* --- Startscreen --- */
 #start-screen h1 {
   font-size: 5em;
-  color: #1cead8;
-  text-shadow: 0 0 25px #1fc1de;
   margin-bottom: 50px;
+  color: #1cead8;
+  text-shadow: 0 0 30px #1fc1de;
 }
 
 #start-btn, #ok-btn {
+  padding: 20px 50px;
+  font-size: 1.6em;
+  border-radius: 15px;
   background: #0044aa;
   color: #fff;
   border: none;
-  padding: 15px 40px;
-  border-radius: 12px;
-  font-size: 1.5em;
   cursor: pointer;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
   transition: 0.3s;
 }
 
 #start-btn:hover, #ok-btn:hover {
   background: #0066ff;
   transform: scale(1.08);
-  box-shadow: 0 0 35px rgba(0,102,255,0.7);
+  box-shadow: 0 0 40px rgba(0,102,255,0.7);
 }
 
-/* --- Disclaimer-Seite --- */
-#disclaimer-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 80px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* --- Disclaimer --- */
 #disclaimer-screen h2 {
-  font-size: 4em; /* groß, mittig */
+  font-size: 4.5em;
   color: #1d9bbe;
-  text-shadow: 0 0 25px #18dff1;
-  margin-bottom: 35px;
+  text-shadow: 0 0 30px #18dff1;
+  margin-bottom: 40px;
 }
 
 #disclaimer-screen p {
-  font-size: 2.5em; /* größer und lesbar */
+  font-size: 1.7em;
   line-height: 1.6em;
   color: #fff;
-  max-width: 80%; /* füllt fast die ganze Breite */
+  max-width: 900px;
   text-align: center;
-  padding: 20px;
-  background: rgba(5,5,40,0.5);
-  border-radius: 15px;
-  box-shadow: 0 0 40px rgba(0,255,255,0.2);
-  backdrop-filter: blur(8px);
+  padding: 30px;
+  background: rgba(5,5,40,0.6);
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0,255,255,0.25);
+  backdrop-filter: blur(10px);
   margin-bottom: 40px;
 }
+
+/* --- Game Screen Container --- */
+#game-screen .container {
+  width: 1200px;
+  max-width: 90vw;
+  height: 800px;
+  padding: 40px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  background: rgba(2,2,41,0.95);
+  box-shadow: 0 0 50px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --- Überschrift Spiel --- */
+#game-screen h1 {
+  font-size: 3.5em;
+  text-align: center;
+  color: #13c8e8;
+  text-shadow: 0 0 20px #1bc6ec;
+  margin-bottom: 30px;
+}
+
+/* --- Game Layout --- */
+.game {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+}
+
+/* --- Fragebox --- */
+#question-box {
+  flex: 2;
+  background: #02043d;
+  padding: 30px;
+  min-width: 400px;
+  min-height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* --- Fragecontainer --- */
+#question-container {
+  background: #062553;
+  border: 4px solid #040849;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px #040849;
+  animation: glow 2s infinite alternate;
+  font-size: 1.5em;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 15px rgba(18, 200, 237, 0.6); }
+  100% { box-shadow: 0 0 30px rgba(16,203,245,0.8); }
+}
+
+/* --- Antworten Buttons --- */
+#answers button {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.4em;
+  cursor: pointer;
+  background: #0044aa;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+#answers button:hover {
+  background: #0066ff;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,102,255,0.7);
+}
+
+#answers button.correct { background: #4CAF50; box-shadow: 0 0 25px #4CAF50; }
+#answers button.wrong { background: #f44336; box-shadow: 0 0 25px #f44336; }
+
+/* --- Ladder --- */
+#ladder {
+  flex: 1;
+  background: #0a0a1e;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+#ladder ul { list-style: none; padding: 0; margin: 0; }
+#ladder li {
+  padding: 8px;
+  margin: 5px 0;
+  text-align: right;
+  font-weight: bold;
+  color: #ccc;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+#ladder li.current { background: #13edf5; color: #000; transform: scale(1.1); }
