@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wer wird Millionär</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- STARTSCREEN -->
+  <div id="start-screen" class="screen active">
+    <h1>VULLCOS GEBURTSTAGSQUIZ</h1>
+    <button id="start-btn">Start</button>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div id="disclaimer-screen" class="screen">
+    <h2>DISCLAIMER</h2>
+    <p>
+      <strong>GEBURTSTAGSKIND...</strong> 
+      Um an dein eigentliches Geschenk zu kommen musst du eine Hürde überwinden..
+      Ich bitte dich während des Quizes keine Sachen nachzuschauen, 
+      nicht auszutabben und den Link <strong>NICHT</strong> zu zeigen.
+
+      Viel Spass und viel Glück!
+      
+      
+      (Dieses Spiel dient ausschließlich der Unterhaltung.  
+      Es steht in keiner Verbindung zur offiziellen TV-Sendung „Wer wird Millionär?“.) 
+      
+      Durch Drücken von <strong>OKAY</strong> erklärst du dich mit diesen Bedingungen einverstanden.
+    </p>
+    <button id="ok-btn">OKAY</button>
+  </div>
+
+  <!-- SPIEL -->
+  <div id="game-screen" class="screen">
+    <div class="container">
+      <h1>Wer wird Millionär</h1>
+      <div class="game">
+        <div id="question-box">
+          <div id="question-container">
+            <p id="question"></p>
+          </div>
+          <div id="answers"></div>
+        </div>
+        <div id="ladder">
+          <ul id="money-ladder"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+<script>
+  // Bildschirm-Logik
+  const startScreen = document.getElementById('start-screen');
+  const disclaimerScreen = document.getElementById('disclaimer-screen');
+  const gameScreen = document.getElementById('game-screen');
+  const startBtn = document.getElementById('start-btn');
+  const okBtn = document.getElementById('ok-btn');
+
+  startBtn.addEventListener('click', () => {
+    startScreen.classList.remove('active');
+    disclaimerScreen.classList.add('active');
+  });
+
+  okBtn.addEventListener('click', () => {
+    disclaimerScreen.classList.remove('active');
+    gameScreen.classList.add('active');
+  });
+</script>
+
+</body>
+</html>
