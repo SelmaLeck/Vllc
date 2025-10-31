@@ -186,8 +186,8 @@ body {
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0,0,0,0.8);
-  max-height: 70vh;   /* passt in Container */
-  overflow-y: auto;   /* scrollt sauber */
+  height: 100%;       /* volle Höhe innerhalb des Game-Bereichs */
+  overflow-y: visible; /* kein Scrollen mehr */
 }
 
 #ladder ul {
