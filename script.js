@@ -1,6 +1,6 @@
 const questions = [
   { q:"Wer war der ZWEITE Streamer dem du auf Twitch gefolgt bist?", a:["Basti","Rewi","Knossi","Kevin"], correct:2 },
-  { q:"Wie vielen Streamern folgst du auf Twitch?", a:["84","103","67","117"], correct:3 },
+  { q:"Wie vielen Streamern folgst du auf Twitch?", a:["84","103","67","118"], correct:3 },
   { q:"Wie viele davon sind weiblich?", a:["39","67","16","8"], correct:2 },
   { q:"Wer hat über 900 Nachrichten bei dir?", a:["JoxoTV","Neneli_","t_son_","TrNeru"], correct:1 },
   { q:"Wie viele aktive Mods hast du?", a:["2","5","0","3"], correct:2 },
